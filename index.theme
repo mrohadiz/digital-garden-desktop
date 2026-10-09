@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Digital-Garden
+Comment=Digital Garden — Retro Workstation Theme for XFCE 4.18
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Digital-Garden
+MetacityTheme=Digital-Garden
+IconTheme=Chicago95
+CursorTheme=Chicago95_Standard_Cursors
+ButtonLayout=O|HMC

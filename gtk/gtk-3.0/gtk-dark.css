@@ -1,0 +1,180 @@
+/* ====================================================================
+ * Digital Garden — Retro Workstation Theme (Dark Variant)
+ * GTK 3.24 Stylesheet
+ * ==================================================================== */
+
+@define-color bg_color #242728;
+@define-color fg_color #E8E4DC;
+@define-color base_color #1A1C1D;
+@define-color text_color #E8E4DC;
+@define-color selected_bg_color #5E8294;
+@define-color selected_fg_color #FCF9F4;
+@define-color tooltip_bg_color #1A1C1D;
+@define-color tooltip_fg_color #E8E4DC;
+@define-color insensitive_bg_color #2E3234;
+@define-color insensitive_fg_color #7E8488;
+@define-color border_color #444A4E;
+@define-color headerbar_bg #1E2021;
+@define-color headerbar_fg #E8E4DC;
+@define-color button_bg #2E3234;
+@define-color button_hover_bg #383D40;
+@define-color button_active_bg #444A4E;
+@define-color success_color #6E947E;
+@define-color warning_color #C99A52;
+@define-color error_color #C95E56;
+@define-color insight_color #8F7DA6;
+
+* {
+    font-family: 'Inter', 'Ubuntu Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+window, .background {
+    background-color: @bg_color;
+    color: @fg_color;
+}
+
+.window-frame, decoration {
+    background-color: @base_color;
+    border: 1px solid @border_color;
+}
+
+view, textview, textview text, iconview, .view {
+    background-color: @base_color;
+    color: @text_color;
+}
+
+view:selected, textview text:selected, iconview:selected, .view:selected {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+headerbar {
+    background-color: @headerbar_bg;
+    color: @headerbar_fg;
+    border-bottom: 1px solid @border_color;
+    min-height: 38px;
+    padding: 2px 6px;
+}
+
+headerbar .title {
+    font-weight: 700;
+    color: @headerbar_fg;
+}
+
+toolbar {
+    background-color: @bg_color;
+    border-bottom: 1px solid @border_color;
+    padding: 3px;
+}
+
+button {
+    background-color: @button_bg;
+    color: @fg_color;
+    border: 1px solid @border_color;
+    border-radius: 3px;
+    padding: 4px 10px;
+    min-height: 24px;
+    min-width: 24px;
+}
+
+button:hover {
+    background-color: @button_hover_bg;
+    border-color: #555D62;
+}
+
+button:active, button:checked {
+    background-color: @button_active_bg;
+    border-color: #626A70;
+}
+
+button:disabled {
+    background-color: @insensitive_bg_color;
+    color: @insensitive_fg_color;
+    border-color: #383D40;
+}
+
+entry {
+    background-color: @base_color;
+    color: @text_color;
+    border: 1px solid @border_color;
+    border-radius: 3px;
+    padding: 4px 8px;
+    min-height: 24px;
+}
+
+entry:focus {
+    border-color: @selected_bg_color;
+    box-shadow: inset 0 0 0 1px @selected_bg_color;
+}
+
+checkbutton check, radiobutton radio {
+    background-color: @base_color;
+    border: 1px solid @border_color;
+    border-radius: 2px;
+}
+
+checkbutton check:checked, radiobutton radio:checked {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+menu, .menu, popover {
+    background-color: @base_color;
+    color: @fg_color;
+    border: 1px solid @border_color;
+    border-radius: 3px;
+    padding: 4px 0;
+}
+
+menuitem {
+    padding: 4px 12px;
+    color: @fg_color;
+}
+
+menuitem:hover {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+scrollbar {
+    background-color: @bg_color;
+}
+
+scrollbar slider {
+    background-color: @border_color;
+    border-radius: 3px;
+}
+
+scrollbar slider:hover {
+    background-color: #5C646A;
+}
+
+scrollbar slider:active {
+    background-color: @selected_bg_color;
+}
+
+notebook {
+    background-color: @base_color;
+}
+
+notebook > header {
+    background-color: @bg_color;
+    border-bottom: 1px solid @border_color;
+}
+
+notebook > header tab {
+    background-color: #2B2F31;
+    color: @insensitive_fg_color;
+    border: 1px solid @border_color;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+    padding: 4px 12px;
+}
+
+notebook > header tab:checked {
+    background-color: @base_color;
+    color: @fg_color;
+    border-bottom: 1px solid @base_color;
+}

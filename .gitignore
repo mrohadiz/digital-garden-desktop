@@ -1,0 +1,53 @@
+# ====================================================================
+# Digital Garden — Retro Workstation (.gitignore)
+# Security & Privacy Hardening Rules
+# ====================================================================
+
+# 1. Screenshot & Screen Capture Privacy
+*screenshot*
+*Screenshot*
+*screen_capture*
+*preview*.png
+*preview*.jpg
+*preview*.jpeg
+*preview*.webp
+assets/previews/*.png
+assets/previews/*.jpg
+assets/previews/*.jpeg
+assets/previews/*.webp
+
+# Whitelist legitimate design previews
+!assets/previews/palette-preview.svg
+!assets/previews/preview.jpg
+
+# 2. Local Backups & State
+*.bak
+*.backup
+*.orig
+*~
+backups/
+digital-garden-backups/
+~/.local/share/digital-garden-backups/
+
+# 3. Credentials, Secrets & Private Configuration
+*.env
+*.env.*
+*.key
+*.pem
+*.token
+*.secret
+credentials.json
+id_rsa
+id_ed25519
+
+# 4. OS & Editor Artifacts
+.DS_Store
+*.swp
+*.swo
+*.tmp
+/tmp/
+*.log
+
+# 5. Whitelist legitimate theme assets
+!assets/wallpaper/*.jpg
+!xfwm4/Digital-Garden/*.png

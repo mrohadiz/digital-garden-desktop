@@ -1,0 +1,399 @@
+/* ====================================================================
+ * Digital Garden — Retro Workstation Theme
+ * GTK 3.24 Stylesheet
+ * ==================================================================== */
+
+@import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained.css");
+
+/* --------------------------------------------------------------------
+ * Color Palette Tokens (Single source of truth: tokens/colors.json)
+ * -------------------------------------------------------------------- */
+@define-color theme_bg_color #F7F3ED;
+@define-color theme_fg_color #2A2820;
+@define-color theme_base_color #FCF9F4;
+@define-color theme_text_color #2A2820;
+@define-color theme_selected_bg_color #4A6B7B;
+@define-color theme_selected_fg_color #FCF9F4;
+@define-color theme_unfocused_bg_color #F7F3ED;
+@define-color theme_unfocused_fg_color #5D5242;
+@define-color theme_unfocused_base_color #FCF9F4;
+@define-color theme_unfocused_text_color #2A2820;
+@define-color theme_unfocused_selected_bg_color #4A6B7B;
+@define-color theme_unfocused_selected_fg_color #FCF9F4;
+
+@define-color bg_color #F7F3ED;
+@define-color fg_color #2A2820;
+@define-color base_color #FCF9F4;
+@define-color text_color #2A2820;
+@define-color selected_bg_color #4A6B7B;
+@define-color selected_fg_color #FCF9F4;
+@define-color tooltip_bg_color #FCF9F4;
+@define-color tooltip_fg_color #2A2820;
+@define-color insensitive_bg_color #EDE7DC;
+@define-color insensitive_fg_color #8E8476;
+@define-color borders #C8BEAF;
+@define-color border_color #C8BEAF;
+@define-color unfocused_borders #D8D0C4;
+@define-color headerbar_bg #EFE9DF;
+@define-color headerbar_fg #2A2820;
+@define-color button_bg #F5F0E6;
+@define-color button_hover_bg #EAE2D5;
+@define-color button_active_bg #DCD4C5;
+@define-color success_color #5B7F6A;
+@define-color warning_color #B88942;
+@define-color error_color #B84A42;
+@define-color insight_color #76648B;
+
+/* --------------------------------------------------------------------
+ * Typography & Base Reset
+ * -------------------------------------------------------------------- */
+* {
+    font-family: 'Inter', 'Ubuntu Sans', sans-serif;
+}
+
+/* --------------------------------------------------------------------
+ * Windows, Views & Layout
+ * -------------------------------------------------------------------- */
+window, .background {
+    background-color: @bg_color;
+    color: @fg_color;
+}
+
+scrolledwindow, viewport {
+    background-color: @base_color;
+}
+
+view, textview, textview text, iconview, .view, treeview {
+    background-color: @base_color;
+    color: @text_color;
+}
+
+view:selected, textview text:selected, iconview:selected, .view:selected, treeview:selected {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+/* Sidebars & Panes */
+.sidebar, .sidebar treeview, .sidebar iconview, .sidebar .view {
+    background-color: #F2ECE2;
+    color: @fg_color;
+    border-right: 1px solid @border_color;
+}
+
+.sidebar .view:selected, .sidebar treeview:selected {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+/* --------------------------------------------------------------------
+ * Headerbars, Menubars & Toolbars
+ * -------------------------------------------------------------------- */
+headerbar {
+    background-color: @headerbar_bg;
+    color: @headerbar_fg;
+    border-bottom: 1px solid @border_color;
+    min-height: 38px;
+    padding: 2px 6px;
+}
+
+headerbar .title {
+    font-weight: 700;
+    color: @headerbar_fg;
+}
+
+headerbar .subtitle {
+    font-size: 85%;
+    color: @insensitive_fg_color;
+}
+
+menubar, .menubar {
+    background-color: @bg_color;
+    color: @fg_color;
+    border-bottom: 1px solid @border_color;
+    padding: 2px 4px;
+}
+
+toolbar, .toolbar {
+    background-color: @bg_color;
+    color: @fg_color;
+    border-bottom: 1px solid @border_color;
+    padding: 3px;
+}
+
+/* --------------------------------------------------------------------
+ * Buttons (Tactile Retro Workstation Feel)
+ * -------------------------------------------------------------------- */
+button {
+    background-color: @button_bg;
+    color: @fg_color;
+    border: 1px solid @border_color;
+    border-radius: 3px;
+    padding: 4px 10px;
+    min-height: 24px;
+    min-width: 24px;
+    transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+button:hover {
+    background-color: @button_hover_bg;
+    border-color: #B2A796;
+}
+
+button:active, button:checked {
+    background-color: @button_active_bg;
+    border-color: #9D9283;
+    box-shadow: inset 0 1px 2px rgba(42, 40, 32, 0.1);
+}
+
+button:disabled {
+    background-color: @insensitive_bg_color;
+    color: @insensitive_fg_color;
+    border-color: #D8D0C4;
+}
+
+button.suggested-action {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+    border-color: #385360;
+}
+
+button.suggested-action:hover {
+    background-color: #55798B;
+    border-color: #2F4652;
+}
+
+button.destructive-action {
+    background-color: @error_color;
+    color: #FCF9F4;
+    border-color: #943A34;
+}
+
+button.destructive-action:hover {
+    background-color: #C7554C;
+}
+
+/* Flat buttons in toolbars & headerbars */
+headerbar button.flat, toolbar button.flat {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+headerbar button.flat:hover, toolbar button.flat:hover {
+    background-color: @button_hover_bg;
+    border-color: @border_color;
+}
+
+/* --------------------------------------------------------------------
+ * Inputs & Forms
+ * -------------------------------------------------------------------- */
+entry {
+    background-color: @base_color;
+    color: @text_color;
+    border: 1px solid @border_color;
+    border-radius: 3px;
+    padding: 4px 8px;
+    min-height: 24px;
+}
+
+entry:focus {
+    border-color: @selected_bg_color;
+    box-shadow: inset 0 0 0 1px @selected_bg_color;
+}
+
+entry:disabled {
+    background-color: @insensitive_bg_color;
+    color: @insensitive_fg_color;
+}
+
+checkbutton check, radiobutton radio {
+    background-color: @base_color;
+    border: 1px solid @border_color;
+    border-radius: 2px;
+    min-height: 14px;
+    min-width: 14px;
+}
+
+radiobutton radio {
+    border-radius: 50%;
+}
+
+checkbutton check:checked, radiobutton radio:checked {
+    background-color: @selected_bg_color;
+    border-color: #385360;
+    color: @selected_fg_color;
+}
+
+/* --------------------------------------------------------------------
+ * Menus & Popovers
+ * -------------------------------------------------------------------- */
+menu, .menu, popover {
+    background-color: @base_color;
+    color: @fg_color;
+    border: 1px solid @border_color;
+    border-radius: 3px;
+    padding: 4px 0;
+    box-shadow: 0 4px 10px rgba(42, 40, 32, 0.1);
+}
+
+menuitem {
+    padding: 4px 12px;
+    min-height: 20px;
+    color: @fg_color;
+}
+
+menuitem:hover {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+menuitem:disabled {
+    color: @insensitive_fg_color;
+}
+
+separator {
+    background-color: @border_color;
+    min-height: 1px;
+    min-width: 1px;
+}
+
+/* --------------------------------------------------------------------
+ * Tooltips
+ * -------------------------------------------------------------------- */
+tooltip, tooltip.background {
+    background-color: @tooltip_bg_color;
+    color: @tooltip_fg_color;
+    border: 1px solid @border_color;
+    border-radius: 3px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 6px rgba(42, 40, 32, 0.1);
+}
+
+/* --------------------------------------------------------------------
+ * Scrollbars
+ * -------------------------------------------------------------------- */
+scrollbar {
+    background-color: @bg_color;
+}
+
+scrollbar trough {
+    background-color: @bg_color;
+    border: none;
+}
+
+scrollbar slider {
+    background-color: @border_color;
+    border-radius: 3px;
+    min-width: 8px;
+    min-height: 8px;
+}
+
+scrollbar slider:hover {
+    background-color: #A89E8F;
+}
+
+scrollbar slider:active {
+    background-color: @selected_bg_color;
+}
+
+/* --------------------------------------------------------------------
+ * Tabs (Notebooks)
+ * -------------------------------------------------------------------- */
+notebook {
+    background-color: @base_color;
+}
+
+notebook > header {
+    background-color: @bg_color;
+    border-bottom: 1px solid @border_color;
+}
+
+notebook > header tab {
+    background-color: #EAE3D6;
+    color: @insensitive_fg_color;
+    border: 1px solid @border_color;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+    padding: 4px 12px;
+    margin-right: 2px;
+}
+
+notebook > header tab:checked {
+    background-color: @base_color;
+    color: @fg_color;
+    border-bottom: 1px solid @base_color;
+}
+
+notebook > header tab:hover:not(:checked) {
+    background-color: #F0E9DD;
+    color: @fg_color;
+}
+
+/* --------------------------------------------------------------------
+ * Statusbar
+ * -------------------------------------------------------------------- */
+statusbar {
+    background-color: @bg_color;
+    color: @insensitive_fg_color;
+    padding: 2px 6px;
+    border-top: 1px solid @border_color;
+}
+
+/* --------------------------------------------------------------------
+ * XFCE Panel Specific Styling
+ * -------------------------------------------------------------------- */
+.xfce4-panel, #XfcePanelWindow {
+    background-color: #EDE7DC;
+    color: #2A2820;
+    border-bottom: 1px solid @border_color;
+}
+
+.xfce4-panel button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #2A2820;
+    border-radius: 2px;
+    padding: 2px 4px;
+}
+
+.xfce4-panel button:hover {
+    background-color: #DFD7C9;
+    border-color: @border_color;
+}
+
+.xfce4-panel button:active,
+.xfce4-panel button:checked,
+.xfce4-panel .tasklist button:checked {
+    background-color: #D4CBBC;
+    border-color: #B0A494;
+    color: #2A2820;
+    box-shadow: inset 0 1px 2px rgba(42, 40, 32, 0.15);
+}
+
+#whiskermenu-window {
+    background-color: @base_color;
+    border: 1px solid @border_color;
+    border-radius: 4px;
+}
+
+#whiskermenu-window entry {
+    background-color: @base_color;
+    border: 1px solid @border_color;
+}
+
+/* --------------------------------------------------------------------
+ * Thunar File Manager Enhancements
+ * -------------------------------------------------------------------- */
+ThunarWindow .standard-view {
+    background-color: @base_color;
+    color: @text_color;
+}
+
+ThunarWindow .standard-view:selected {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+ThunarWindow .shortcuts-pane {
+    background-color: #F2ECE2;
+    color: @text_color;
+}

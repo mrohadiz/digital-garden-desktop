@@ -1,0 +1,78 @@
+{
+  "name": "Digital Garden — Retro Workstation",
+  "version": "1.0.0",
+  "description": "Design system tokens for Digital Garden Retro Workstation on XFCE / GTK",
+  "palette": {
+    "garden-bg": "#F7F3ED",
+    "garden-surface": "#FCF9F4",
+    "garden-text": "#2A2820",
+    "garden-muted": "#5D5242",
+    "garden-accent": "#4A6B7B",
+    "garden-success": "#5B7F6A",
+    "garden-border": "#C8BEAF",
+    "garden-warning": "#B88942",
+    "garden-insight": "#76648B"
+  },
+  "semantic": {
+    "window": {
+      "bg": "#F7F3ED",
+      "surface": "#FCF9F4",
+      "border": "#C8BEAF"
+    },
+    "headerbar": {
+      "bg": "#EFE9DF",
+      "border": "#C8BEAF",
+      "fg": "#2A2820"
+    },
+    "titlebar": {
+      "active-bg": "#4A6B7B",
+      "active-fg": "#FCF9F4",
+      "inactive-bg": "#EBE5DC",
+      "inactive-fg": "#5D5242",
+      "border": "#C8BEAF"
+    },
+    "button": {
+      "bg": "#F5F0E6",
+      "fg": "#2A2820",
+      "border": "#C8BEAF",
+      "hover-bg": "#EBE4D8",
+      "active-bg": "#DDD6C8",
+      "primary-bg": "#4A6B7B",
+      "primary-fg": "#FCF9F4"
+    },
+    "entry": {
+      "bg": "#FCF9F4",
+      "fg": "#2A2820",
+      "border": "#C8BEAF",
+      "focus-border": "#4A6B7B"
+    },
+    "selection": {
+      "bg": "#4A6B7B",
+      "fg": "#FCF9F4"
+    },
+    "panel": {
+      "bg": "#EDE7DC",
+      "fg": "#2A2820",
+      "border": "#C8BEAF"
+    },
+    "scrollbar": {
+      "trough": "#F2EDE4",
+      "slider": "#C8BEAF",
+      "slider-hover": "#A89E8F",
+      "slider-active": "#4A6B7B"
+    },
+    "state": {
+      "success": "#5B7F6A",
+      "warning": "#B88942",
+      "error": "#B84A42",
+      "info": "#4A6B7B",
+      "insight": "#76648B"
+    }
+  },
+  "typography": {
+    "ui-font": "Inter",
+    "ui-font-size": "10pt",
+    "mono-font": "Ubuntu Sans Mono",
+    "mono-font-size": "10pt"
+  }
+}

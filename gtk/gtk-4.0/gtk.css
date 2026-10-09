@@ -1,0 +1,87 @@
+/* ====================================================================
+ * Digital Garden — Retro Workstation Theme
+ * GTK 4 Stylesheet (GTK 4 / Libadwaita compatible definitions)
+ * ==================================================================== */
+
+@define-color accent_color #4A6B7B;
+@define-color accent_bg_color #4A6B7B;
+@define-color accent_fg_color #FCF9F4;
+@define-color window_bg_color #F7F3ED;
+@define-color window_fg_color #2A2820;
+@define-color view_bg_color #FCF9F4;
+@define-color view_fg_color #2A2820;
+@define-color headerbar_bg_color #EFE9DF;
+@define-color headerbar_fg_color #2A2820;
+@define-color headerbar_border_color #C8BEAF;
+@define-color headerbar_backdrop_color #E8E2D7;
+@define-color card_bg_color #FCF9F4;
+@define-color card_fg_color #2A2820;
+@define-color card_border_color #C8BEAF;
+@define-color popover_bg_color #FCF9F4;
+@define-color popover_fg_color #2A2820;
+@define-color shade_color rgba(42, 40, 32, 0.08);
+@define-color scrollbar_outline_color #C8BEAF;
+@define-color success_color #5B7F6A;
+@define-color success_bg_color #5B7F6A;
+@define-color success_fg_color #FCF9F4;
+@define-color warning_color #B88942;
+@define-color warning_bg_color #B88942;
+@define-color warning_fg_color #FCF9F4;
+@define-color error_color #B84A42;
+@define-color error_bg_color #B84A42;
+@define-color error_fg_color #FCF9F4;
+
+window {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+    font-family: 'Inter', 'Ubuntu Sans', sans-serif;
+}
+
+headerbar {
+    background-color: @headerbar_bg_color;
+    color: @headerbar_fg_color;
+    border-bottom: 1px solid @headerbar_border_color;
+}
+
+button {
+    background-color: #F5F0E6;
+    color: #2A2820;
+    border: 1px solid #C8BEAF;
+    border-radius: 3px;
+    padding: 4px 10px;
+}
+
+button:hover {
+    background-color: #EAE2D5;
+}
+
+button:active, button:checked {
+    background-color: #DCD4C5;
+    border-color: #9D9283;
+}
+
+button.suggested-action {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+    border-color: #385360;
+}
+
+entry {
+    background-color: @view_bg_color;
+    color: @view_fg_color;
+    border: 1px solid #C8BEAF;
+    border-radius: 3px;
+    padding: 4px 8px;
+}
+
+entry:focus-within {
+    border-color: @accent_bg_color;
+    outline: 1px solid @accent_bg_color;
+}
+
+popover contents {
+    background-color: @popover_bg_color;
+    color: @popover_fg_color;
+    border: 1px solid #C8BEAF;
+    border-radius: 4px;
+}
